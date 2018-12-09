@@ -3,8 +3,15 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh 'echo "Hello"'
+        checkout scm
       }
+    }
+    stage('Clean') {
+      sh 'chmod +x mvnw'
+     sh './mvnw clean' 
+    }
+    stage('Compile') {
+      sh './mvnw compile' 
     }
   }
 }
