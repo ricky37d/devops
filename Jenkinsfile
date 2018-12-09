@@ -7,8 +7,12 @@ pipeline {
       }
     }
     stage('Clean') {
+      steps {
       sh 'chmod +x mvnw'
-     sh './mvnw clean' 
+      }
+      steps {
+     sh './mvnw clean'
+      }
     }
     stage('Compile') {
       sh './mvnw compile' 
