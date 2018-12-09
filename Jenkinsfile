@@ -1,20 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
+    stage('checkout') {
       steps {
-        checkout scm
+      checkout scm      
       }
-    }
-    stage('Clean') {
+      stage('print name') {
         steps {
-     sh './mvnw clean'
+         sh 'echo "Karan"' 
+         }
+      stage('print lastname') {
+        steps {
+         sh 'echo "Singh"' 
+        }
+      }
+      
       }
     }
-    stage('Compile') {
-      steps {
-      sh './mvnw compile'
-      }
-    }
-  }
-}
