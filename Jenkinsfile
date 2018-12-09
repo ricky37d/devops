@@ -15,7 +15,9 @@ pipeline {
       }
     }
     stage('Compile') {
-      sh './mvnw compile' 
+      steps {
+      sh './mvnw compile'
+      }
     }
   }
 }
