@@ -16,6 +16,11 @@ pipeline {
          sh 'echo "Singh"' 
         }
       }
+	stage ('Pring Address') {
+	 steps {
+	  sh 'echo "This is my address"'		
+		}
+	}
       
       }
     }
