@@ -13,7 +13,7 @@ pipeline {
       }
       stage('print lastname') {
         steps {
-         sh 'echo "Singh"' 
+         sh 'echo "Singh Saab"' 
         }
       }
       
