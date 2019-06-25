@@ -6,14 +6,14 @@ pipeline {
       checkout scm      
       }
     }
-      stage('print name') {
+      stage('Build') {
         steps {
-         sh 'echo "Karan"' 
+         sh 'mvn clean compile' 
          }
       }
-      stage('print lastname') {
+      stage('Test') {
         steps {
-         sh 'echo "Singh Saab"' 
+         sh 'mvn test'
         }
       }
       
