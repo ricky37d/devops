@@ -23,6 +23,20 @@ pipeline {
 
         }
       }
-      
+      stage('Test Report') {
+          steps {
+              script {
+                junit '**/surefire-reports/*.xml'
+              }
+          }
+        }
+        stage('Sonar Analysis') {
+            steps {
+                echo 'Sonar Scanner'
+                withSonarQubeEnv('sonar67') {
+                 sh "mvn sonar:sonar"
+                        }
+            }
+        } 
       }
     }
